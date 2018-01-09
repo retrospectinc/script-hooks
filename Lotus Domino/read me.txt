@@ -1,0 +1,61 @@
+Lotus Domino Server External Scripts
+Release 1.0, 4.10.2000
+-------------------------
+Retrospect supports external scripts to further automate Retrospect
+operations. You can attach a single executable script to Retrospect or
+to a Retrospect Client to act upon the scriptable events that occur 
+during Retrospect operations.
+
+External Scripting Events are fully documented in the Retrospect 5.1
+User's Guide Addendum, located in the Documentation folder on the 
+Retrospect 5.1 CD. 
+
+A Lotus Domino Server may be installed as an application or as a service.
+An appropriate batch file for either option is included in this package. 
+These batch files allow Retrospect to back up a Lotus Domino Server by 
+stopping the server, allowing the backup to take place, and restarting 
+the Domino Server to resume normal operations. These external scripts 
+are fully user customizable. This feature is intended for users 
+experienced in NT shell scripting. Retrospect can only handle one external 
+script at a time, so if you want to invoke the functionality of more 
+than one script, for example add email notification to the computer running 
+the Domino Server backup, they must be combined into a single script.
+
+To use a script, place it in the Retrospect directory. The backup script 
+name must match the script name defined in the batch file. By default, 
+this is set as "Backup Domino". This can be modified by editing the batch 
+file where noted.
+
+Lotus Domino Server Application
+-------------------------
+This external script is designed to back up a Lotus Domino Server running
+as an Application. This batch file requires the Microsoft Windows Resource
+Kit to be loaded. Using this script, Retrospect will quit the Lotus Domino 
+Server, perform a consistency check, compress its databases, then back up. 
+When Retrospect completes its operations, the Lotus Domino Server will be 
+restarted. 
+
+This batch file requires the user to configure the path to the Domino Server 
+directory (ex. C:\Lotus\Domino) and set the version number of the Domino 
+Server (ex. 4.6a=460, 5.0.2=502). These settings are in the top portion of 
+the batch file and are clearly noted.
+
+Lotus Domino Server Service
+-------------------------
+This external script is designed to back up a Lotus Domino Server running as 
+a service. Using this script, Retrospect will stop the Lotus Domino Server 
+service before backing up. After Retrospect finishes backing up, the Lotus 
+Domino Server service will be restarted. 
+
+This batch file requires the user to set the name of the service to match 
+the name of Lotus Domino Server service in the services control panel 
+(ex. Lotus Domino Server). The name of the service will differ for different 
+versions of Domino.
+
+Feedback
+-------------------------
+If you make improvements or changes to these External Scripts, we would like to hear about it. Please email 
+retroextras@retrospect.com. We would love to hear from you! 
+
+© 2012 Retrospect, Inc. Portions © 1989-2010 EMC Corporation. All rights reserved.
+

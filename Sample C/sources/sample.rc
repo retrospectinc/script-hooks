@@ -1,0 +1,163 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 6,0,0,100
+ PRODUCTVERSION 6,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Retrospect, Inc\0"
+            VALUE "FileDescription", "RetroEventHandler\0"
+            VALUE "FileVersion", "6, 0, 0, 100\0"
+            VALUE "InternalName", "RetroEventHandler\0"
+            VALUE "LegalCopyright", "© 1989-2012 Retrospect, Inc & EMC Corporation\0"
+            VALUE "LegalTrademarks", "Retrospect®\0"
+            VALUE "OriginalFilename", "RetroEventHandler.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Retrospect\0"
+            VALUE "ProductVersion", "6, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "Retrospect Event Handler"
+    IDS_AUTOLAUNCHED        "StartApp:\r\rRetrospect is autolaunching on %s.\rLet Retrospect launch?"
+    IDS_LAUNCHED            "StartApp:\r\rRetrospect is launching on %s.\rLet Retrospect launch?"
+    IDS_END_APP             "EndApp:\r\rRetrospect quit on %s"
+    IDS_START_SERVER        "StartBackupServer:\r\rRetrospect Backup Server is starting on %s.\rLet Backup Server run?"
+    IDS_STOP_SERVER         "StopBackupServer:\r\rRetrospect Backup server is stopping on %s."
+    IDS_START_SCRIPT        "StartScript:\r\rRetrospect script '%s' is starting on %s.\rLet the script run?"
+    IDS_END_SCRIPT          "EndScript:\r\rRetrospect script '%s' %s."
+    IDS_START_SOURCE        "StartSource:\r\rRetrospect script '%s' will back up volume '%s' located at %s on %s.\rContinue?"
+    IDS_END_SOURCE          "EndSource:\r\rRetrospect volume '%s' located at %s on %s %s. Script '%s' did a %s backup to '%s'. %s files (%s) were transferred in %s. The script started at %s, the volume started at %s and finished at %s."
+    IDS_SUCCESSFUL          "completed successfully"
+    IDS_ONE_ERROR           "completed with one non-fatal error."
+    IDS_MANY_ERRORS         "completed with %s non-fatal errors."
+    IDS_FATAL_ERROR         "was stopped by error #%s (%s)"
+    IDS_MEDIA_REQUEST       "MediaRequest:\r\rRetrospect is requesting media '%s' (label: '%s'). %s Retrospect has waited %s so far.\rContinue with media request?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MEDIA_KNOWN         "Retrospect has backed up to this media before."
+    IDS_MEDIA_UNKNOWN       "This is either a new or unknown media."
+    IDS_TO_MEDIA_REQUEST    "TimedOutMediaRequest:\r\rRetrospect's media request for '%s' ('%s') is about to time out after waiting %s.\rLet Retrospect time out?"
+    IDS_PASSWORD_FAILED     "PasswordEntry:\r\rLogin failed after %s attempts. Error code #%s - %s\rRetrospect's dialog: '%s'"
+    IDS_PASSWORD_ONE        "PasswordEntry:\r\rLogin successful.\rRetrospect's dialog: '%s'"
+    IDS_PASSWORD_MANY       "PasswordEntry:\r\rLogin successful after %s attempts.\rRetrospect's dialog: '%s'"
+    IDS_STOPSCHED           "StopSched:\r\rRetrospect script '%s' is scheduled to stop on %s.\rLet the script stop?"
+    IDS_SCRIPT_CHECK_FAILED "ScriptCheckFailed:\r\rRetrospect script '%s' will not run on %s as scheduled due to error #%s (%s).\rRetrospect's dialog: '%s'"
+    IDS_NEXT_EXEC           "NextExec:\r\rRetrospect script '%s' is scheduled to run next on %s."
+    IDS_FATALERROR          "Script '%s' failed in %s with error code #%s - %s.\rRetrospect's dialog: '%s'.\rDo you want to display a modal dialog?"
+    IDS_ABORT_STARTAPP      "Retrospect launch stopped by external script."
+    IDS_ABORT_STARTBACKUPSERVER "Backup server stopped by external script."
+    IDS_ABORT_STARTSCRIPT   "Script stopped by external script"
+    IDS_ABORT_STARTSOURCE   "Source skipped by external script."
+    IDS_ABORT_MEDIAREQUEST  "Media request aborted by external script."
+    IDS_ABORT_TIMEOUTMEDIAREQUEST 
+                            "TimeOutMediaRequest aborted by external script."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABORT_STOPSCHED     "Script was not stopped due to intervention by external script."
+    IDS_ABORT_FATALBACKUPERROR 
+                            "External script prevented modal dialog from displaying."
+    IDS_APP_MESSAGE         "This is a sample Retrospect external script written in C.\r\rTo use this file on the backup server, move it to Retrospect's directory\rTo use this file on a client machine, copy it to the directory containing\rthe Retrospect client ('retroclient.exe')."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
