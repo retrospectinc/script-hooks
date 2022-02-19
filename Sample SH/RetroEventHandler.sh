@@ -12,6 +12,7 @@
 # StopBackupServer - The backup server is stopping
 # StartScript - A script is beginning
 # EndScript - A script is stopping
+# AnomalyAlert - Detected anomaly on a volume
 # StartSource - A volume is about to be backed up
 # EndSource - A volume has been backed up
 # 
@@ -104,6 +105,22 @@ function EndScript {
     else
         log "Retrospect script $scriptName stopped with no errors."
     fi
+}
+
+function AnomalyAlert {
+    scriptName=$1 ; shift
+    volName=$1 ; shift
+    sourcePath=$1 ; shift
+    clientName=$1 ; shift
+    selectorName=$1 ; shift
+    watchedFiles=$1 ; shift
+    checkFiles=$1 ; shift
+    checkWatchedPct=$1 ; shift
+    interventionFile=$1 ; shift  # Anything written to this file will cause Retrospect to skip the source
+    log "$scriptName detected anomaly. Among $watchedFiles files selected by $selectorName of volume $volName at $sourcePath on $clientName, $checkFiles ($checkWatchedPct%) changed."
+
+    # To skip the source
+    # abort_with_msg "$interventionFile" "Backup of source $volName cancelled by RetroEventHandler"
 }
 
 function StartSource {
