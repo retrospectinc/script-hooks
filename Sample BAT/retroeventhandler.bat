@@ -11,6 +11,7 @@ REM StartBackupServer - The backup server is starting
 REM StopBackupServer - The backup server is stopping
 REM StartScript - A script is beginning
 REM EndScript - A script is stopping
+REM AnomalyAlert - Detected anomaly on a volume
 REM StartSource - A volume is about to be backed up
 REM EndSource - A volume has been backed up
 REM 
@@ -185,6 +186,32 @@ if %fatalErrCode%=="0" goto :else_NonFatalEndScript
 :endif_EndScript
 
 goto :EXIT REM -- End EndScript
+REM ---------------------------------------------------------------------------
+
+
+REM -- Begin AnomalyAlert ------------------------------------------------------
+:AnomalyAlert
+set scriptName=%1
+set volName=%2
+set sourcePath=%3
+set clientName=%4
+set selectorName=%5
+set watchedFiles=%6
+set checkFiles=%7
+set checkWatchedPct=%8
+set interventionFile=%9
+
+REM -- Replace the following lines with your AnomalyAlert procedure
+echo %scriptName% detected anomaly. Among %watchedFiles% files selected by %selectorName% of volume %volName% at %sourcePath% on %clientName%, %checkFiles% (%checkWatchedPct%%%) changed.
+
+ask /T:Y,60 Let source start?
+if not errorlevel 2 goto :endif_Continue_AnomalyAlert
+	echo %scriptName% will not back up volume %volName%
+	pause
+	echo Source skipped by external script. > %interventionFile%
+:endif_Continue_AnomalyAlert
+
+goto :EXIT REM -- End AnomalyAlert
 REM ---------------------------------------------------------------------------
 
 
